@@ -2,7 +2,7 @@
 #Find all S3 buckets with server side encryption disabled 
 for bucket in $(aws s3 ls | cut -d " " -f 3); do if [[ $(aws s3api get-bucket-encryption --bucket $bucket 2>&1| grep -io error | wc -c) -gt 0 ]]; then forge_S3_SS3_Disabled $bucket; echo -e  $bucket '\t\t\t[Not encrypted]' >> bucket_store; else echo -e $bucket '\t\t\t[Encrypted]' >>bucket_store; fi; done
 
-#Find all S3 bucket objects with server side encryption disabled
+#Find all S3 access logging status
 for bucket in $(aws s3 ls | cut -d " " -f 3); do if [[ $(aws s3api get-bucket-logging --bucket $bucket 2>&1 | wc -c) -eq 0 ]]; then forge_S3_Access_Logging_Disabled $bucket echo -e $bucket '\t\t\t[Logging disabled]' >> bucket_logging_status; else echo -e $bucket '\t\t\t[Logging enabled]' >> bucket_logging_status; fi; done  
 
 #Find all S3 buckets flagged as public
@@ -26,4 +26,4 @@ for volumes in $(aws ec2 describe-volumes --region $region | grep -i "encrypted"
 
 
 TODO:
-Add lambda env variables, sse, add NACL checks,
+Add lambda env variables, sse, add NACL checks, more logging
