@@ -20,15 +20,6 @@ init(autoreset=True)
 #region = "us-east-1"
 
 print(Fore.CYAN + r"""
-Author: Patrick Smith
-   _____              .__.__    ____   ____             __                              
-  /  _  \   _______  _|__|  |   \   \ /   /____   _____/  |_ __ _________  ____   ______
- /  /_\  \ /    \  \/ /  |  |    \   Y   // __ \ /    \   __\  |  \_  __ \/ __ \ /  ___/
-/    |    \   |  \   /|  |  |__   \     /\  ___/|   |  \  | |  |  /|  | \|  ___/ \___ \ 
-\____|__  /___|  /\_/ |__|____/    \___/  \___  >___|  /__| |____/ |__|   \___  >____  >
-        \/     \/                             \/     \/                       \/     \/
-""") 
-
 
 
 #Calculate length of string to stdout from the pritn statement for the "account number: " identity call and add that to the length of the stdout string from all the services
