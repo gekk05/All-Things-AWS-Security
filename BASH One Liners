@@ -1,6 +1,6 @@
 
 #Find all S3 buckets with server side encryption disabled 
-for bucket in $(aws s3 ls | cut -d " " -f 3); do if [[ $(aws s3api get-bucket-encryption --bucket $bucket 2>&1| grep -io error | wc -c) -gt 0 ]]; then echo -e $bucket 'Uencrypted';fi; done
+for bucket in $(aws s3 ls | cut -d " " -f 3); do if [[ $(aws s3api get-bucket-encryption --bucket $bucket 2>&1| grep -io error | wc -c) -gt 0 ]]; then echo -e $bucket 'Unencrypted bucket!';fi; done
 
 #Find all S3 access logging status
 for bucket in $(aws s3 ls | cut -d " " -f 3); do if [[ $(aws s3api get-bucket-logging --bucket $bucket 2>&1 | wc -c) -eq 0 ]];then echo -e $bucket '[Logging disabled]';fi; done
