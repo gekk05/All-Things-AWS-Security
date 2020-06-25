@@ -8,6 +8,7 @@ Services that are region-specific will require modification to the $region varia
 
 
 **AWS security and best practices checklist**
+
 This is a live document-- expect updates!
 
 Future plans (possibly videos as well):
